@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SamsTrack';
+
+  showLogin: boolean = false; // Toggle to show login form
+
 }

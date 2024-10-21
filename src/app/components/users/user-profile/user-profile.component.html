@@ -1,0 +1,81 @@
+<div *ngIf="userProfile.role==='admin'">
+    <app-admin-menu></app-admin-menu>
+</div>
+
+<div *ngIf="userProfile.role==='faculty'">
+    <app-user-menu></app-user-menu>
+</div>
+
+<head>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+</head>
+
+<body>
+    <div class="background-image">
+        <div class="wrapper">
+            <!-- User Icon as Logo -->
+            <div class="logo text-center mb-3">
+                <i class="fas fa-user-plus"></i>
+            </div>
+
+            <div class="name">Add New User</div>
+
+            <div class="row">
+                <!-- Username Field -->
+                <div class="col-6 form-field d-flex align-items-center">
+                    <span class="fas fa-user"></span>
+                    <input type="text" name="username" id="userName" placeholder="Username" [(ngModel)]="username">
+                </div>
+
+                <!-- Email Field -->
+                <div class="col-6 form-field d-flex align-items-center">
+                    <span class="fas fa-envelope"></span>
+                    <input type="email" name="email" id="email" placeholder="Email" [(ngModel)]="userProfile.email">
+                </div>
+            </div>
+
+
+            <!-- Two-column Layout -->
+            <form>
+                <div class="row">
+                    <!-- First Name Field -->
+                    <div class="col-6 form-field d-flex align-items-center">
+                        <span class="fas fa-user"></span>
+                        <input type="text" name="firstName" id="firstName" placeholder="First Name" [(ngModel)]="userProfile.firstName">
+                    </div>
+
+                    <!-- Last Name Field -->
+                    <div class="col-6 form-field d-flex align-items-center">
+                        <span class="fas fa-user"></span>
+                        <input type="text" name="lastName" id="lastName" placeholder="Last Name" [(ngModel)]="userProfile.lastName">
+                    </div>
+                </div>
+
+                
+                <div class="row">
+                    <!-- Password Field -->
+                    <div class="col-6 form-field d-flex align-items-center">
+                        <span class="fas fa-key"></span>
+                        <input type="password" name="password" id="pwd" placeholder="Password" [(ngModel)]="userProfile.password">
+                    </div>
+
+                    <!-- Role Dropdown -->
+                    <div class="col-6 form-field d-flex align-items-center">
+                        <span class="fas fa-user-tag"></span>
+                        <select name="role" id="role" [(ngModel)]="userProfile.role">
+                            <option [ngValue]="userProfile.role" disabled selected>{{userProfile.role}}</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Faculty">Faculty</option>
+                            <option value="User">User</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button (click)="updateUser()" class="btn btn-primary btn-block mt-3">Update User</button>
+            </form>
+        </div>
+    </div>
+</body>

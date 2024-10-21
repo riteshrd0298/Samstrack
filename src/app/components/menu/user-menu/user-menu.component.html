@@ -1,0 +1,39 @@
+<head>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Other CSS and imports -->
+</head>
+
+
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fas fa-chalkboard-teacher"></i>
+                Faculty Dashboard <!-- or Admin Dashboard -->
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#">User</a>
+                    <ul class="dropdown">
+                        <li><a [routerLink]="['/add-user']">Add User</a></li>
+                        <li><a [routerLink]="['/all-user']">All User</a></li>
+                    </ul>
+                </li>
+                <li><a [routerLink]="['/all-subject']">Subject</a></li>
+                <li>
+                    <a href="#">Student</a>
+                    <ul class="dropdown">
+                        <li><a [routerLink]="['/add-student']">Add Student</a></li>
+                        <li><a [routerLink]="['/all-student']">All Student</a></li>
+                    </ul>
+                </li>
+                <!-- Add "Take Attendance" only in Faculty Dashboard -->
+                <li><a [routerLink]="['/take-attendance']">Take Attendance</a></li>
+                <li><a [routerLink]="['/view-attendance']">View Attendance</a></li>
+            </ul>
+            <button (click)="logout()" class="logout-btn">Logout</button>
+        </div>
+    </nav>
+    <!-- Rest of the page content -->
+</body>

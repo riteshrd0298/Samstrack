@@ -1,0 +1,159 @@
+/* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Resetting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Set height for full viewport coverage */
+html, body {
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Background image styling */
+.background-image {
+    background-image: url('/assets/images/welcome.jpg'); /* Correct image path */
+    height: 100vh; /* Full viewport height */
+    background-size: cover; /* Cover entire container */
+    background-position: center; /* Center the background image */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    position: relative;
+}
+
+/* Optional: Add some overlay effect */
+.background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Wrapper for the form */
+.wrapper {
+    max-width: 350px;
+    min-height: 500px;
+    padding: 40px 30px 30px 30px;
+    background-color: rgba(236, 240, 243, 0.8); /* Semi-transparent background */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    position: relative;
+    z-index: 2; /* Ensure it is above the overlay */
+}
+
+/* Logo section */
+.logo {
+    width: 100px; /* Adjusted width */
+    height: 100px; /* Ensure the logo height equals the width for a circle */
+    margin: auto;
+    text-align: center;
+    border-radius: 50%; /* Makes it circular */
+    overflow: hidden; /* Ensures any content stays within the circular bounds */
+    background-color: #ecf0f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo i {
+    font-size: 60px; /* Adjust the icon size for better fit */
+    color: #555;
+    box-shadow: 0px 0px 3px #5f5f5f,
+        0px 0px 0px 5px #ecf0f3,
+        8px 8px 15px #a7aaa7,
+        -8px -8px 15px #fff;
+    padding: 20px;
+    background-color: #ecf0f3;
+    border-radius: 50%;
+}
+
+
+/* Title for the form */
+.wrapper .name {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 1.3px;
+    padding-left: 10px;
+    text-align: center;
+    color: #333; /* Darker color for better contrast */
+    margin-top: 20px;
+}
+
+
+/* Styling for the form fields with icons */
+.wrapper .form-field {
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper .form-field input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 10px 15px 10px 10px;
+}
+
+.wrapper .form-field .fas {
+    color: #555; /* Color for the icons */
+    margin-right: 10px; /* Spacing between icon and input field */
+    font-size: 1.2rem; /* Adjust icon size */
+}
+
+/* Button styles */
+.wrapper .btn {
+    width: 100%;
+    height: 40px;
+    background-color: #03A9F4;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: 3px 3px 3px #b1b1b1,
+        -3px -3px 3px #fff;
+    letter-spacing: 1.3px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.wrapper .btn:hover {
+    background-color: #039BE5;
+}
+
+/* Link styling */
+.wrapper a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: #03A9F4;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.wrapper a:hover {
+    color: #039BE5;
+}
+
+/* Responsive adjustments */
+@media(max-width: 380px) {
+    .wrapper {
+        margin: 30px 20px;
+        padding: 40px 15px 15px 15px;
+    }
+}
+
