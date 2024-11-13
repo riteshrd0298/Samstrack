@@ -32,7 +32,7 @@ export class UserProfileComponent implements OnInit {
   }
   updateUser(){
     this.userService.updateUser(this.userProfile).subscribe((response)=>{
-      // this.userProfile=response;
+      this.userProfile=response;
       alert("User Updated Successfully");
       this.router.navigate(['/all-user']);
     });

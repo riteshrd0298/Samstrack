@@ -1,1 +1,43 @@
-<p>add-student works!</p>
+<div *ngIf="role==='admin'">
+    <app-admin-menu></app-admin-menu>
+</div>
+
+<div *ngIf="role==='faculty'">
+    <app-user-menu></app-user-menu>
+</div>
+
+<head>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+</head>
+
+<body>
+    <div class="background-image">
+        <div class="wrapper">
+            <!-- User Icon as Logo -->
+            <div class="logo text-center mb-3">
+                <i class="fas fa-user-plus"></i>
+            </div>
+
+            <div class="name">Add New Student</div>
+
+            <div class="row">
+                <!-- Username Field -->
+                <div class="col-6 form-field d-flex align-items-center">
+                    <span class="fas fa-user"></span>
+                    <input type="text" name="name" id="name" placeholder="Student Name " [(ngModel)]="name">
+                </div>
+
+                <!-- Email Field -->
+                <div class="col-6 form-field d-flex align-items-center">
+                    <span class="fas fa-envelope"></span>
+                    <input type="email" name="email" id="email" placeholder="Email" [(ngModel)]="email">
+                </div>
+            </div>
+
+                <!-- Submit Button -->
+                <button (click)="addStudent()" class="btn btn-primary btn-block mt-3">Add Student</button>
+        </div>
+    </div>
+</body>

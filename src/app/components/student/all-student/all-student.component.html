@@ -1,1 +1,40 @@
-<p>all-student works!</p>
+<div *ngIf="role === 'admin'">
+    <app-admin-menu></app-admin-menu>
+</div>
+
+<div *ngIf="role === 'faculty'">
+    <app-user-menu></app-user-menu>
+</div>
+
+<div class="background-image">
+    <div class="wrapper">
+        <!-- Title Section -->
+        <div class="name">All Students</div>
+
+        <!-- Table to show all users -->
+        <div class="table-responsive">
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Student Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let std of student_List">
+                        <td>{{ std.id }}</td>
+                        <td>{{ std.name }}</td>
+                        <td>{{ std.email }}</td>
+                        <td>
+                            <button class="btn btn-sm "><a [routerLink]="['/view-student', std.id ]"><i
+                                        class="fas fa-eye" style="color: red;"></i></a></button>
+                            <button (click)="deleteStudent(std.id)" class="btn btn-sm"><i class="fas fa-trash" style="color: red;"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

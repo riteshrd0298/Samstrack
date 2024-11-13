@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./all-user.component.css']
 })
 export class AllUserComponent {
-  users: any[] = []; // Array to hold user data
+ users: any[] = []; // Array to hold user data
   role: string = ''; // To determine which navbar to show
 
   constructor(private userService: UserService, private router: Router) {}

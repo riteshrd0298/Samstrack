@@ -1,0 +1,129 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background image styling */
+.background-image {
+    background-image: url('/assets/images/welcome.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: fixed; /* Fix the background */
+    width: 100%;
+}
+
+/* Wrapper (Container) Styling */
+.wrapper {
+    max-width: 1200px;
+    padding: 20px;
+    background-color: rgba(236, 240, 243, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px auto; /* Centering the wrapper */
+    overflow: auto; /* Allow scrolling */
+    max-height: 80vh; /* Control the height */
+}
+
+/* Title Section */
+.name {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 1.3px;
+    padding-left: 10px;
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Form Container Styling */
+.form-container {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Field Styling */
+.form-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
+.form-field input {
+    width: 100%;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    color: #666;
+    padding: 10px 15px;
+}
+
+.form-field .fas {
+    color: #555;
+    margin-right: 10px;
+}
+
+/* Button Styling */
+.btn {
+    padding: 10px 20px;
+    background-color: #03A9F4;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.btn-danger {
+    background-color: #F44336;
+}
+
+.btn-success {
+    background-color: #4CAF50;
+}
+
+.btn:hover {
+    background-color: #039BE5;
+}
+
+/* Table Styling */
+.table-responsive {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.user-table th {
+    background-color: rgba(3, 169, 244, 0.8);
+    color: white;
+}
+
+.user-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Add Subject Header Styling */
+.add-subject-header {
+    text-align: right;
+    padding-bottom: 10px;
+}

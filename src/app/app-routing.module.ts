@@ -12,6 +12,10 @@ import { TakeAttendenceComponent } from './components/attendence/take-attendence
 import { ViewAttendenceComponent } from './components/attendence/view-attendence/view-attendence.component';
 import { AuthGuard } from './auth.guard';
 import { UserProfileComponent } from './components/users/user-profile/user-profile.component';
+import { AddStudentComponent } from './components/student/add-student/add-student.component';
+import { AllStudentComponent } from './components/student/all-student/all-student.component';
+import { StudentProfileComponent } from './components/student/student-profile/student-profile.component';
+import { ViewSubjectComponent } from './components/subject/view-subject/view-subject.component';
 
 const routes: Routes = [
   {
@@ -60,6 +64,24 @@ const routes: Routes = [
   },
 
   {
+    path:'add-student',
+    component:AddStudentComponent,
+    canActivate: [AuthGuard] 
+  },
+
+  {
+    path:'all-student',
+    component:AllStudentComponent,
+    canActivate: [AuthGuard] 
+  },
+  
+  {
+    path:'view-student/:id',
+    component:StudentProfileComponent,
+    canActivate: [AuthGuard] 
+  },
+
+  {
     path:'view-user/:username',
     component:UserProfileComponent,
     canActivate: [AuthGuard] 
@@ -68,6 +90,12 @@ const routes: Routes = [
   {
     path:'all-subject',
     component:AllSubjectComponent,
+    canActivate: [AuthGuard] 
+  },
+
+  {
+    path:'view-subject/:id',
+    component:ViewSubjectComponent,
     canActivate: [AuthGuard] 
   },
 

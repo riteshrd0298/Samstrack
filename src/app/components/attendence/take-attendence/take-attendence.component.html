@@ -1,1 +1,108 @@
-<p>take-attendence works!</p>
+<head>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-image">
+        <div class="container">
+            <!-- Role-Based Menus -->
+            <div *ngIf="role === 'admin'">
+                <app-admin-menu></app-admin-menu>
+            </div>
+            <div *ngIf="role === 'faculty'">
+                <app-user-menu></app-user-menu>
+            </div>
+
+            <!-- Dropdown Selections for Attendance -->
+            <div class="row select-row">
+                <!-- Subject Dropdown -->
+                <div class="col-md-3 select-item">
+                    <i class="fas fa-book-open select-icon"></i>
+                    <select class="form-control" (change)="onSubjectChange($event)">
+                        <option value="">Select Subject</option>
+                        <option *ngFor="let subject of subjects" [value]="subject.id">{{ subject.name }}</option>
+                    </select>
+                </div>
+
+                <!-- Faculty Dropdown -->
+                <div class="col-md-3 select-item">
+                    <i class="fas fa-user-tie select-icon"></i>
+                    <select class="form-control" (change)="onFacultyChange($event)">
+                        <option value="">Select Faculty</option>
+                        <option *ngFor="let faculty of facultyUser" [value]="faculty.username">{{ faculty.username }}</option>
+                    </select>
+                </div>
+
+                <!-- Date Picker -->
+                <div class="col-md-3 select-item">
+                    <i class="fas fa-calendar-alt select-icon"></i>
+                    <input type="date" id="datePicker" (change)="onDateChange($event)" class="form-control" />
+                </div>
+
+                <!-- Time Dropdown -->
+                <div class="col-md-3 select-item">
+                    <i class="fas fa-clock select-icon"></i>
+                    <select class="form-control" (change)="onTimeChange($event)">
+                        <option value="">Select Time</option>
+                              <!-- AM Times -->
+    <option value="08:00 AM">08:00 AM</option>
+    <option value="08:30 AM">08:30 AM</option>
+    <option value="09:00 AM">09:00 AM</option>
+    <option value="09:30 AM">09:30 AM</option>
+    <option value="10:00 AM">10:00 AM</option>
+    <option value="10:30 AM">10:30 AM</option>
+    <option value="11:00 AM">11:00 AM</option>
+    <option value="11:30 AM">11:30 AM</option>
+
+    <!-- PM Times -->
+    <option value="12:00 PM">12:00 PM</option>
+    <option value="12:30 PM">12:30 PM</option>
+    <option value="13:00 PM">01:00 PM</option>
+    <option value="13:30 PM">01:30 PM</option>
+    <option value="14:00 PM">02:00 PM</option>
+    <option value="14:30 PM">02:30 PM</option>
+    <option value="15:00 PM">03:00 PM</option>
+    <option value="15:30 PM">03:30 PM</option>
+    <option value="16:00 PM">04:00 PM</option>
+    <option value="16:30 PM">04:30 PM</option>
+    <option value="17:00 PM">05:00 PM</option>
+    <option value="17:30 PM">05:30 PM</option>
+    <option value="18:00 PM">06:00 PM</option>
+    <option value="18:30 PM">06:30 PM</option>
+    <option value="19:00 PM">07:00 PM</option>
+    <option value="19:30 PM">07:30 PM</option>
+    <option value="20:00 PM">08:00 PM</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Attendance Table -->
+            <div class="row">
+                <div *ngIf="students.length > 0" class="table-responsive">
+                    <form (ngSubmit)="submitAttendance()">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Attendance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let student of students">
+                                    <td>{{ student.name }}</td>
+                                    <td>
+                                        <input type="checkbox" [(ngModel)]="student.isSelected" [value]="student.id"
+                                            name="attendanceStatus" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-primary">Submit Attendance</button>
+                    </form>
+                </div>
+                <div *ngIf="students.length === 0" class="no-students">No students available.</div>
+            </div>
+        </div>
+    </div>
+</body>

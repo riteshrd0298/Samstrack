@@ -1,0 +1,117 @@
+/* General Styling */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin-top: 40px;
+}
+
+/* Background Image Styling */
+.background-image {
+    background-image: url('/assets/images/welcome.jpg');
+    background-size: cover;
+    background-position: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Container Styling */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Select Row Styling */
+.select-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.select-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 250px;
+}
+
+.select-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding-left: 35px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+/* Table Styling */
+.table-responsive {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: rgba(240, 240, 240, 0.5);
+}
+
+.table th {
+    background-color: rgba(0, 123, 255, 0.6);
+    color: white;
+    font-weight: bold;
+}
+
+/* No Students Message Styling */
+.no-students {
+    color: #888;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}

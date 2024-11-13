@@ -1,1 +1,64 @@
-<p>all-subject works!</p>
+<div *ngIf="role === 'admin'">
+    <app-admin-menu></app-admin-menu>
+</div>
+
+<div *ngIf="role === 'faculty'">
+    <app-user-menu></app-user-menu>
+</div>
+
+<div class="background-image">
+    <div class="wrapper">
+        <!-- Title Section -->
+        <div class="name">All Users</div>
+
+        <!-- Add Subject Form (Matches login form design) -->
+        <div *ngIf="showAddSubjectForm" class="form-container">
+            <form>
+                <div class="form-group">
+                    <label for="subjectName">Subject Name</label>
+                    <div class="form-field">
+                        <span class="fas fa-book"></span> <!-- Optional Subject Icon -->
+                        <input type="text" id="name" class="form-control" [(ngModel)]="name" name="name" placeholder="Enter Subject Name" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" (click)="addSubject()" class="btn btn-success">Add</button>
+                    <button type="button" class="btn btn-danger" (click)="toggleAddSubjectForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Table to show all subjects -->
+        <div class="table-responsive">
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <!-- Add Subject Button Above "Sr.No" -->
+                        <th colspan="3" class="add-subject-header">
+                            <button class="btn btn-primary btn-sm" (click)="toggleAddSubjectForm()">Add Subject</button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Sr.No</th>
+                        <th>Subject Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sub of sub_List; let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{ sub.name }}</td>
+                        <td>
+                            <button class="btn btn-sm">
+                                <a [routerLink]="['/view-subject', sub.id ]">
+                                    <i class="fas fa-eye" style="color: red;"></i>
+                                </a>
+                            </button>
+                            <button (click)="deleteSubject(sub.id)" class="btn btn-sm"><i class="fas fa-trash" style="color: red;"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
