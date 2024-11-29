@@ -2,23 +2,24 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-
+<div *ngIf="role === 'admin'">
+    <app-admin-menu></app-admin-menu>
+</div>
+<div *ngIf="role === 'faculty'">
+    <app-user-menu></app-user-menu>
+</div>
 <body>
     <div class="background-image">
         <div class="container">
             <!-- Role-Based Menus -->
-            <div *ngIf="role === 'admin'">
-                <app-admin-menu></app-admin-menu>
-            </div>
-            <div *ngIf="role === 'faculty'">
-                <app-user-menu></app-user-menu>
-            </div>
+           
 
             <!-- Dropdown Selections for Attendance -->
             <div class="row select-row">
                 <!-- Subject Dropdown -->
+                 <h2 align="center" class="text-white">Take Attendance</h2>
                 <div class="col-md-3 select-item">
-                    <i class="fas fa-book-open select-icon"></i>
+                    <i class="fas fa-book-open  select-icon"></i>
                     <select class="form-control" (change)="onSubjectChange($event)">
                         <option value="">Select Subject</option>
                         <option *ngFor="let subject of subjects" [value]="subject.id">{{ subject.name }}</option>
@@ -79,27 +80,29 @@
 
             <!-- Attendance Table -->
             <div class="row">
-                <div *ngIf="students.length > 0" class="table-responsive">
+                <div *ngIf="students.length > 0" class="table-responsive rounded" >
                     <form (ngSubmit)="submitAttendance()">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Attendance</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let student of students">
-                                    <td>{{ student.name }}</td>
-                                    <td>
-                                        <input type="checkbox" [(ngModel)]="student.isSelected" [value]="student.id"
-                                            name="attendanceStatus" />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button type="submit" class="btn btn-primary">Submit Attendance</button>
+                        <div class="overflow-y-scroll mb-2" style="height: 24rem;" id="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Attendance</th>
+                                    </tr>
+                                </thead>
+                                    <tbody>
+                                        <tr *ngFor="let student of students">
+                                            <td>{{ student.name }}</td>
+                                            <td>
+                                                <input type="checkbox" [(ngModel)]="student.isSelected" [value]="student.id"
+                                                    name="attendanceStatus" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+                        </div>
                     </form>
+                    <button type="submit" class="btn btn-primary">Submit Attendance</button>
                 </div>
                 <div *ngIf="students.length === 0" class="no-students">No students available.</div>
             </div>

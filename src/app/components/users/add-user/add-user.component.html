@@ -24,21 +24,7 @@
 
             <div class="row">
                 <!-- Username Field -->
-                <div class="col-6 form-field d-flex align-items-center">
-                    <span class="fas fa-user"></span>
-                    <input type="text" name="username" id="userName" placeholder="Username" [(ngModel)]="username">
-                </div>
 
-                <!-- Email Field -->
-                <div class="col-6 form-field d-flex align-items-center">
-                    <span class="fas fa-envelope"></span>
-                    <input type="email" name="email" id="email" placeholder="Email" [(ngModel)]="email">
-                </div>
-            </div>
-
-
-            <!-- Two-column Layout -->
-            <form>
                 <div class="row">
                     <!-- First Name Field -->
                     <div class="col-6 form-field d-flex align-items-center">
@@ -51,6 +37,24 @@
                         <span class="fas fa-user"></span>
                         <input type="text" name="lastName" id="lastName" placeholder="Last Name" [(ngModel)]="lastName">
                     </div>
+                </div>   
+            </div>
+
+
+            <!-- Two-column Layout -->
+            <form>
+                <div class="row">
+                    <!-- First Name Field -->
+                    <div class="col-6 form-field d-flex align-items-center">
+                        <span class="fas fa-user"></span>
+                        <input type="text" name="username" id="userName" placeholder="Username" [(ngModel)]="username">
+                    </div>
+    
+                    <!-- Email Field -->
+                    <div class="col-6 form-field d-flex align-items-center">
+                        <span class="fas fa-envelope"></span>
+                        <input type="email" name="email" id="email" placeholder="Email" [(ngModel)]="email">
+                    </div>
                 </div>
 
                 
@@ -58,17 +62,18 @@
                     <!-- Password Field -->
                     <div class="col-6 form-field d-flex align-items-center">
                         <span class="fas fa-key"></span>
-                        <input type="password" name="password" id="pwd" placeholder="Password" [(ngModel)]="password">
+                        <input type="text" name="password" id="pwd" placeholder="Password" [(ngModel)]="password">
                     </div>
 
                     <!-- Role Dropdown -->
                     <div class="col-6 form-field d-flex align-items-center">
-                        <span class="fas fa-user-tag"></span>
-                        <select name="role" id="role" [(ngModel)]="role">
+                        <span class="fas fa-user-tag"></span> 
+
+                          <select name="role" id="role"  [(ngModel)]="role">
                             <option value="" disabled selected>Select Role</option>
                             <option value="Admin">Admin</option>
                             <option value="Faculty">Faculty</option>
-                            <option value="User">User</option>
+                          
                         </select>
                     </div>
                 </div>

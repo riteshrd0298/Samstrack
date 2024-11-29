@@ -24,16 +24,18 @@
 
             <div class="row">
                 <!-- Username Field -->
+
                 <div class="col-6 form-field d-flex align-items-center">
                     <span class="fas fa-user"></span>
-                    <input type="text" name="username" id="username" placeholder="Username" [(ngModel)]="userProfile.username">
+                    <input type="text" name="firstName" id="firstName" placeholder="First Name" [(ngModel)]="userProfile.firstName">
                 </div>
 
-                <!-- Email Field -->
+                <!-- Last Name Field -->
                 <div class="col-6 form-field d-flex align-items-center">
-                    <span class="fas fa-envelope"></span>
-                    <input type="email" name="email" id="email" placeholder="Email" [(ngModel)]="userProfile.email">
+                    <span class="fas fa-user"></span>
+                    <input type="text" name="lastName" id="lastName" placeholder="Last Name" [(ngModel)]="userProfile.lastName">
                 </div>
+
             </div>
 
 
@@ -43,13 +45,13 @@
                     <!-- First Name Field -->
                     <div class="col-6 form-field d-flex align-items-center">
                         <span class="fas fa-user"></span>
-                        <input type="text" name="firstName" id="firstName" placeholder="First Name" [(ngModel)]="userProfile.firstName">
+                        <input type="text" name="username" id="username" placeholder="Username" [(ngModel)]="userProfile.username">
                     </div>
-
-                    <!-- Last Name Field -->
+    
+                    <!-- Email Field -->
                     <div class="col-6 form-field d-flex align-items-center">
-                        <span class="fas fa-user"></span>
-                        <input type="text" name="lastName" id="lastName" placeholder="Last Name" [(ngModel)]="userProfile.lastName">
+                        <span class="fas fa-envelope"></span>
+                        <input type="email" name="email" id="email" placeholder="Email" [(ngModel)]="userProfile.email">
                     </div>
                 </div>
 
@@ -58,7 +60,7 @@
                     <!-- Password Field -->
                     <div class="col-6 form-field d-flex align-items-center">
                         <span class="fas fa-key"></span>
-                        <input type="password" name="password" id="pwd" placeholder="Password" [(ngModel)]="userProfile.password">
+                        <input type="text" name="password" id="pwd" placeholder="Password" [(ngModel)]="userProfile.password">
                     </div>
 
                     <!-- Role Dropdown -->

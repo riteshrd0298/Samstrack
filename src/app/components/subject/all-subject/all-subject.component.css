@@ -1,129 +1,139 @@
-/* General Styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
 /* Background image styling */
 .background-image {
     background-image: url('/assets/images/welcome.jpg');
-    height: 100vh;
+    height: 89vh;
     background-size: cover;
     background-position: center;
-    position: fixed; /* Fix the background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay effect */
+.background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
+    background: rgba(56, 50, 50, 0.5);
+    z-index: 1;
 }
 
-/* Wrapper (Container) Styling */
+/* Wrapper for the content */
 .wrapper {
+    width: 62%;
     max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    background-color: rgba(236, 240, 243, 0.8);
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    margin: 20px auto; /* Centering the wrapper */
-    overflow: auto; /* Allow scrolling */
-    max-height: 80vh; /* Control the height */
+    background-color: rgba(191, 210, 252, 0.39); /* Semi-transparent background */
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+    height: 83%;
+    overflow: hidden;
+    /* overflow-x: scroll; Allow horizontal scrolling if needed */
 }
 
-/* Title Section */
+/* Title styling */
 .name {
     font-weight: 600;
-    font-size: 1.4rem;
-    letter-spacing: 1.3px;
-    padding-left: 10px;
+    font-size: 2rem; /* Larger font size */
     text-align: center;
-    color: #333;
-    margin-top: 20px;
+    color: #fff;
+    margin-bottom: 30px;
 }
 
-/* Form Container Styling */
-.form-container {
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Form Field Styling */
-.form-field {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
-}
-
-.form-field input {
+/* Table styling */
+.user-table {
     width: 100%;
-    border: none;
-    background: none;
-    font-size: 1rem;
-    color: #666;
-    padding: 10px 15px;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.3); /* Transparent background */
+    box-shadow: inset 10px 10px 10px #cbced1, inset -7px -7px 10px #c3b9b9;
+    overflow: hidden;
 }
 
-.form-field .fas {
-    color: #555;
-    margin-right: 10px;
+.user-table tbody tr{
+    overflow: scroll;
 }
 
-/* Button Styling */
-.btn {
-    padding: 10px 20px;
-    background-color: #03A9F4;
+.user-table th,
+.user-table td {
+    padding: 1rem;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #0e0d0d; /* Darker font color for better contrast */
+}
+
+.user-table th {
+    background-color: rgba(3, 169, 244, 0.8); /* Semi-transparent header */
     color: white;
-    border-radius: 25px;
-    cursor: pointer;
+}
+
+.user-table tbody tr:nth-child(even) {
+    background-color:rgba(52, 45, 45, 0.2); /* Transparent row for even rows */
+}
+
+/* Button styling */
+.btn {
+    font-size: 22px;
+    padding: 5px 10px;
+    border-radius: 10px;
     border: none;
     outline: none;
-}
-
-.btn-danger {
-    background-color: #F44336;
-}
-
-.btn-success {
-    background-color: #4CAF50;
+    cursor: pointer;
+    color: white;
+    background-color: #1386a29d;
+    margin-right: 5px;
 }
 
 .btn:hover {
     background-color: #039BE5;
 }
 
-/* Table Styling */
-.table-responsive {
-    width: 100%;
-    margin-top: 20px;
+.btn-edit {
+    background-color: #4CAF50;
 }
 
-.user-table {
-    width: 100%;
-    border-collapse: collapse;
+.btn-edit:hover {
+    background-color: #45A049;
 }
 
-.user-table th,
-.user-table td {
-    padding: 15px;
-    text-align: left;
-    font-size: 1.2rem;
-    color: #333;
+.btn-delete {
+    background-color: #F44336;
 }
 
-.user-table th {
-    background-color: rgba(3, 169, 244, 0.8);
-    color: white;
+.btn-delete:hover {
+    background-color: #E53935;
+}
+#addbtn{
+    background-color: #d84939e5;
+}   
+
+#table-container{
+    height: 85%;
+    overflow-x: hidden !important;
 }
 
-.user-table tbody tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Add Subject Header Styling */
-.add-subject-header {
-    text-align: right;
-    padding-bottom: 10px;
-}
+#table-container {
+    background-color: #ccd4bf;
+  }
+  
+  #table-container::-webkit-scrollbar-track {
+    background-color: #ccd4bf;
+  }
+  
+  #table-container::-webkit-scrollbar {
+    width: 15px;
+    background-color: #f5f5f5;
+  }
+  
+  #table-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #218b82;
+  }

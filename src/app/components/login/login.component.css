@@ -41,12 +41,12 @@ html, body {
 
 /* Wrapper for the form */
 .wrapper {
-    max-width: 350px;
-    min-height: 500px;
+    max-width: 550px;
+    min-height: 450px;
     padding: 40px 30px 30px 30px;
-    background-color: rgba(236, 240, 243, 0.8); /* Semi-transparent background */
+    background-color: rgba(203, 229, 250, 0.8); /* Semi-transparent background */
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    box-shadow: 0 4px 20px rgba(4, 4, 4, 0.2); /* Softer shadow */
     position: relative;
     z-index: 2; /* Ensure it is above the overlay */
 }
@@ -59,7 +59,7 @@ html, body {
     text-align: center;
     border-radius: 50%; /* Makes it circular */
     overflow: hidden; /* Ensures any content stays within the circular bounds */
-    background-color: #ecf0f3;
+    background-color: #c7d1d9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,7 +69,7 @@ html, body {
     font-size: 60px; /* Adjust the icon size for better fit */
     color: #555;
     box-shadow: 0px 0px 3px #5f5f5f,
-        0px 0px 0px 5px #ecf0f3,
+        0px 0px 0px 5px #888a8a,
         8px 8px 15px #a7aaa7,
         -8px -8px 15px #fff;
     padding: 20px;
@@ -85,7 +85,7 @@ html, body {
     letter-spacing: 1.3px;
     padding-left: 10px;
     text-align: center;
-    color: #333; /* Darker color for better contrast */
+    color: #131111; /* Darker color for better contrast */
     margin-top: 20px;
 }
 
@@ -95,7 +95,7 @@ html, body {
     padding-left: 10px;
     margin-bottom: 20px;
     border-radius: 20px;
-    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+    box-shadow: inset 5px 5px 5px #d9dadb, inset -5px -5px 5px #fff;
     display: flex;
     align-items: center;
 }
@@ -106,12 +106,12 @@ html, body {
     outline: none;
     background: none;
     font-size: 1.2rem;
-    color: #666;
+    color: #120f0f;
     padding: 10px 15px 10px 10px;
 }
 
 .wrapper .form-field .fas {
-    color: #555; /* Color for the icons */
+    color: #181616; /* Color for the icons */
     margin-right: 10px; /* Spacing between icon and input field */
     font-size: 1.2rem; /* Adjust icon size */
 }
@@ -120,11 +120,11 @@ html, body {
 .wrapper .btn {
     width: 100%;
     height: 40px;
-    background-color: #03A9F4;
+    background-color: #595b5c;
     color: #fff;
     border-radius: 25px;
     box-shadow: 3px 3px 3px #b1b1b1,
-        -3px -3px 3px #fff;
+        -3px -3px 3px #dad9d9;
     letter-spacing: 1.3px;
     cursor: pointer;
     border: none;
