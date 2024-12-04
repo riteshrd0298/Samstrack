@@ -1,0 +1,9 @@
+.card-img-top{
+    height: 110px;
+}
+
+.background-image {
+    background-image: url('/assets/images/faculty.jpg');
+    background-size: cover;
+    background-position: center;
+  }

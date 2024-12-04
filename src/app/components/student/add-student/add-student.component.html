@@ -22,16 +22,17 @@
 
             <div class="name">Add New Student</div>
 
-            <div class="row">
-                <!-- Username Field -->
-                <div class="col-6 form-field d-flex align-items-center">
-                    <span class="fas fa-user"></span>
+              <div class="form-container mt-4">
+                <div class="row gx-3">
+                    <!-- Student Name Field -->
+                    <div class="col-lg-6 col-md-12 mb-3 form-field d-flex align-items-center">
+                        <span class="fas fa-user me-2"></span>
                     <input type="text" name="name" id="name" placeholder="Student Name " [(ngModel)]="name">
                 </div>
 
                 <!-- Email Field -->
-                <div class="col-6 form-field d-flex align-items-center">
-                    <span class="fas fa-envelope"></span>
+                <div class="col-lg-6 col-md-12 mb-3 form-field d-flex align-items-center">
+                    <span class="fas fa-envelope me-2"></span>
                     <input type="email" name="email"  id="email" placeholder="Email" [(ngModel)]="email">
                 </div>
             </div>
@@ -39,5 +40,6 @@
                 <!-- Submit Button -->
                 <button (click)="addStudent()" class="btn btn-primary btn-block mt-3">Add Student</button>
         </div>
+    </div>
     </div>
 </body>

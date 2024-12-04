@@ -13,14 +13,14 @@
 
         <!-- Table to show all users -->
         <div class="table-responsive overflow-scroll rounded" id="table-container">
-            <table class="user-table">
-                <thead>
-                   
-                        <th>Id</th>
-                        <th>Student Name</th>
-                        <th>Email</th>
-                        <th>Actions</th>
-                   
+            <table class="user-table  table-bordered">
+                <thead >
+                   <tr>
+                        <th >Id</th>
+                        <th >Student Name</th>
+                        <th >Email</th>
+                        <th >Actions</th>
+                   </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let std of student_List">

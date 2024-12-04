@@ -154,20 +154,44 @@ input::placeholder{
 }
 
 /* Responsive adjustments */
-@media(max-width: 768px) {
+@media (max-width: 768px) {
     .wrapper {
-        max-width: 80%;
-        padding: 30px 20px; /* Adjust padding for smaller screens */
+        width: 95%;
+        padding: 15px;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .form-field input {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px;
     }
 }
 
-@media(max-width: 480px) {
+@media (max-width: 576px) {
     .wrapper {
-        max-width: 90%;
-        padding: 25px 15px;
+        width: 95%;
+        padding: 10px;
+        border-radius: 10px;
     }
-    .wrapper .btn {
-        height: 40px;
-        font-size: 1rem;
+
+    .name {
+        font-size: 1.3rem;
+    }
+
+    .form-field input {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 7px;
     }
 }

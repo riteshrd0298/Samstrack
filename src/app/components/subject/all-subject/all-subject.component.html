@@ -7,47 +7,71 @@
 </div>
 
 <div class="background-image">
-    <div class="wrapper">
+    <div class="wrapper container-fluid py-4">
         <!-- Title Section -->
-        <div class="name">All Subject</div>
+        <div class="name text-center mb-4">All Subject</div>
 
-        <!-- Add Subject Form (Matches login form design) -->
-        <div *ngIf="showAddSubjectForm" class="form-container">
-            <form>
-                <div class="form-group">
-                    <label for="subjectName" class="fw-bold fas fa-book"> Subject Name</label>
+        <!-- Add Subject Form (Responsive Design) -->
+        <div *ngIf="showAddSubjectForm" class="form-container mb-4">
+            <form class=" border rounded bg-light">
+                <div class="form-group mb-3">
+                    <label for="subjectName" class="fw-bold"> 
+                        <i class="fas fa-book"></i> Subject Name
+                    </label>
                     <div class="form-field">
-                        
-                        <input type="text" id="name" class="form-control" [(ngModel)]="name" name="name" placeholder="Enter Subject Name" required />
+                        <input 
+                            type="text" 
+                            id="name" 
+                            class="form-control" 
+                            [(ngModel)]="name" 
+                            name="name" 
+                            placeholder="Enter Subject Name" 
+                            required 
+                        />
                     </div>
                 </div>
-                <div class="form-group">
-                    <button type="submit" (click)="addSubject()" class="btn btn-success">Add</button>
-                    <button type="button" class="btn btn-danger" (click)="toggleAddSubjectForm()">Cancel</button>
+                <div class="form-group d-flex justify-content-between">
+                    <button 
+                        type="submit" 
+                        (click)="addSubject()" 
+                        class="btn btn-success flex-grow-1 me-2">
+                        Add
+                    </button>
+                    <button 
+                        type="button" 
+                        class="btn btn-danger flex-grow-1" 
+                        (click)="toggleAddSubjectForm()">
+                        Cancel
+                    </button>
                 </div>
             </form>
         </div>
 
-        <!-- Table to show all subjects -->
+        <!-- Table to Show All Subjects -->
         <div class="table-responsive overflow-scroll rounded" id="table-container">
-            <table class="user-table">
+            <table class="user-table  table-bordered">
                 <thead>
                     <tr>
                         <!-- Add Subject Button Above "Sr.No" -->
-                        <th colspan="3" class="add-subject-header">
-                            <button class="btn btn-dark btn-sm" id="addbtn" (click)="toggleAddSubjectForm()" >Add Subject</button>
+                        <th colspan="3" class="text-end py-2">
+                            <button 
+                                class="btn btn-dark btn-sm" 
+                                id="addbtn" 
+                                (click)="toggleAddSubjectForm()">
+                                Add Subject
+                            </button>
                         </th>
                     </tr>
-                  
+                    <tr>
                         <th>Sr.No</th>
                         <th>Subject Name</th>
                         <th>Actions</th>
-                   
+                    </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let sub of sub_List; let i = index">
-                        <td>{{i + 1}}</td>
-                        <td class="text-capitalize fw-bold">{{ sub.name}}</td>
+                        <td>{{ i + 1 }}</td>
+                        <td class="text-capitalize fw-bold">{{ sub.name }}</td>
                         <td>
                             <button class="btn btn-sm">
                                 <a [routerLink]="['/view-subject', sub.id ]">

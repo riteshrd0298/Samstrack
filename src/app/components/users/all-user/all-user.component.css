@@ -25,7 +25,7 @@
 
 /* Wrapper for the content */
 .wrapper {
-    width: 62%;
+    width: 90%; /* Adjusted for smaller screens */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -36,7 +36,6 @@
     z-index: 2;
     height: 83%;
     overflow: hidden;
-    /* overflow-x: scroll; Allow horizontal scrolling if needed */
 }
 
 /* Title styling */
@@ -57,15 +56,11 @@
     overflow: hidden;
 }
 
-.user-table tbody tr{
-    overflow: scroll;
-}
-
 .user-table th,
 .user-table td {
     padding: 1rem;
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1rem; /* Adjusted font size */
     color: #0e0d0d; /* Darker font color for better contrast */
 }
 
@@ -75,13 +70,13 @@
 }
 
 .user-table tbody tr:nth-child(even) {
-    background-color:rgba(52, 45, 45, 0.2); /* Transparent row for even rows */
+    background-color: rgba(52, 45, 45, 0.2); /* Transparent row for even rows */
 }
 
 /* Button styling */
 .btn {
-    font-size: 22px;
-    padding: 5px 10px;
+    font-size: 16px; /* Adjusted for smaller screens */
+    padding: 8px 12px;
     border-radius: 10px;
     border: none;
     outline: none;
@@ -110,30 +105,95 @@
 .btn-delete:hover {
     background-color: #E53935;
 }
-#addbtn{
-    background-color: #d84939e5;
-}   
 
-#table-container{
-    height: 85%;
-    overflow-x: hidden !important;
+#addbtn {
+    background-color: #d84939e5;
 }
 
+/* Table container scroll styling */
 #table-container {
+    height: 85%;
+    overflow-x: hidden !important;
     background-color: #ccd4bf;
-  }
-  
-  #table-container::-webkit-scrollbar-track {
+}
+
+#table-container::-webkit-scrollbar-track {
     background-color: #ccd4bf;
-  }
-  
-  #table-container::-webkit-scrollbar {
-    width: 15px;
+}
+
+#table-container::-webkit-scrollbar {
+    width: 10px;
     background-color: #f5f5f5;
-  }
-  
-  #table-container::-webkit-scrollbar-thumb {
+}
+
+#table-container::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #218b82;
-  }
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 992px) {
+    .wrapper {
+        width: 80%; /* Reduce wrapper width */
+    }
+
+    .user-table th,
+    .user-table td {
+        font-size: 0.9rem; /* Adjust font size */
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .name {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        width: 85%; /* Further reduce width */
+        padding: 15px;
+    }
+
+    .user-table th,
+    .user-table td {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .name {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .wrapper {
+        width: 97%; /* Full-width on smaller screens */
+        padding: 10px;
+    }
+
+    .name {
+        font-size: 1.4rem;
+    }
+
+    .user-table th,
+    .user-table td {
+        font-size: 0.7rem;
+        padding: 6px;
+    }
+
+    .btn {
+        font-size: 10px;
+        padding: 4px 6px;
+    }
+}

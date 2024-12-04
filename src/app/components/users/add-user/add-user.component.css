@@ -16,7 +16,6 @@ html, body {
 }
 
 /* Background image styling */
-/* Background image styling */
 .background-image {
     background-image: url('/assets/images/welcome.jpg');
     height: 89vh;
@@ -44,23 +43,23 @@ html, body {
 /* Wrapper for the content */
 .wrapper {
     width: 62%;
-    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     background-color: rgba(191, 210, 252, 0.39); /* Semi-transparent background */
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 2;
-    height: 83%;
+    height: auto; /* Allow content to grow */
     overflow: hidden;
-    /* overflow-x: scroll; Allow horizontal scrolling if needed */
 }
+
 /* Logo section */ 
 .logo {
-    width: 100px; /* Adjusted size to balance with form */
+    width: 100px;
     height: 100px;
-    margin: 0 auto 20px; /* Spacing around the logo */
+    margin: 0 auto 20px;
     text-align: center;
     border-radius: 50%;
     overflow: hidden;
@@ -71,7 +70,7 @@ html, body {
 }
 
 .logo i {
-    font-size: 60px; /* Adjusted icon size */
+    font-size: 60px;
     color: #161616;
     box-shadow: 0px 0px 5px #878181,
         0px 0px 0px 6px #ecf0f3,
@@ -85,18 +84,18 @@ html, body {
 /* Title for the form */
 .wrapper .name {
     font-weight: 600;
-    font-size: 1.6rem; /* Slightly reduced font size */
+    font-size: 1.6rem;
     letter-spacing: 1.3px;
     text-align: center;
-    color: #f9f6f6; /* Darker color for better contrast */
+    color: #f9f6f6;
     margin-top: 15px;
-    margin-bottom: 25px; /* Adjusted space below the title */
+    margin-bottom: 25px;
 }
 
 /* Styling for the form fields with icons */
 .wrapper .form-field {
     padding-left: 15px;
-    margin-bottom: 20px; /* Adjusted spacing between fields */
+    margin-bottom: 20px;
     border-radius: 25px;
     box-shadow: inset 10px 10px 10px #cbced1, inset -10px -7px 10px #fff;
     display: flex;
@@ -108,11 +107,11 @@ html, body {
     border: none;
     outline: none;
     background: none;
-    font-size: 1.2rem; /* Consistent font size */
+    font-size: 1.2rem;
     color: #1d1c1c;
-    padding: 12px 20px; /* Comfortable padding inside input fields */
+    padding: 12px 20px;
 }
-input::placeholder{
+input::placeholder {
     color: #0e0d0d;
     font-weight: bold;
 }
@@ -120,13 +119,13 @@ input::placeholder{
 .wrapper .form-field .fas {
     color: #0e0d0d;
     margin-right: 15px;
-    font-size: 1.4rem; /* Slightly reduced icon size */
+    font-size: 1.4rem;
 }
 
 /* Button styles */
 .wrapper .btn {
     width: 100%;
-    height: 45px; /* Height balanced with width */
+    height: 45px;
     background-color: #5d7581;
     color: #fff;
     border-radius: 30px;
@@ -137,7 +136,7 @@ input::placeholder{
     border: none;
     outline: none;
     font-size: 1.1rem;
-    margin-top: 10px; /* Added space above button */
+    margin-top: 10px;
 }
 
 .wrapper .btn:hover {
@@ -147,7 +146,7 @@ input::placeholder{
 /* Link styling */
 .wrapper a {
     text-decoration: none;
-    font-size: 1rem; /* Consistent link size */
+    font-size: 1rem;
     color: #03A9F4;
     display: block;
     text-align: center;
@@ -158,21 +157,64 @@ input::placeholder{
     color: #039BE5;
 }
 
-/* Responsive adjustments */
-@media(max-width: 768px) {
-    .wrapper {
-        max-width: 80%;
-        padding: 30px 20px; /* Adjust padding for smaller screens */
-    }
-}
-
-@media(max-width: 480px) {
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
     .wrapper {
         max-width: 90%;
-        padding: 25px 15px;
+        padding: 10px;
     }
+
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .logo i {
+        font-size: 50px;
+    }
+
+    .wrapper .name {
+        font-size: 1.4rem;
+    }
+
     .wrapper .btn {
         height: 40px;
         font-size: 1rem;
+    }
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 480px) {
+    .wrapper {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .logo i {
+        font-size: 40px;
+    }
+
+    .wrapper .name {
+        font-size: 1.2rem;
+    }
+
+    .wrapper .form-field input,
+    .wrapper .form-field select {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    .wrapper .btn {
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .wrapper a {
+        font-size: 0.9rem;
     }
 }

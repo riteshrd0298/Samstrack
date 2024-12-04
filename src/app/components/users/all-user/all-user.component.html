@@ -9,32 +9,37 @@
 <div class="background-image">
   <div class="wrapper">
     <!-- Title Section -->
-    <div class="name">All Users</div>
+    <div class="name text-center mb-4">All Users</div>
 
-    <!-- Table to show all users -->
+    <!-- Responsive Table Container -->
     <div class="table-responsive overflow-scroll rounded" id="table-container">
-      <table class="user-table ">
-          <thead>
+      <table class="user-table  table-bordered ">
+        <thead>
+          <tr>
             <th>Username</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
             <th>Role</th>
             <th>Actions</th>
-
-          </thead>
+          </tr>
+        </thead>
         <tbody>
           <tr *ngFor="let user of users">
             <td class="text-capitalize fw-bold">{{ user.username }}</td>
             <td class="text-capitalize fw-bold">{{ user.firstName }}</td>
             <td class="text-capitalize fw-bold">{{ user.lastName }}</td>
-            <td class="fw-bold">{{ user.email | lowercase}}</td>
+            <td class="fw-bold">{{ user.email | lowercase }}</td>
             <td class="text-capitalize fw-bold">{{ user.role }}</td>
             <td>
-              <button class="btn btn-sm "><a [routerLink]="['/view-user', user.username ]"><i class="fas fa-eye"
-                    style="color: rgb(7, 7, 7);"></i></a></button>
-              <button (click)="deleteUser(user.username)" class="btn btn-sm "><i class="fas fa-trash"
-                  style="color: rgb(223, 62, 62);"></i></button>
+              <button class="btn btn-sm">
+                <a [routerLink]="['/view-user', user.username]">
+                  <i class="fas fa-eye" style="color: rgb(7, 7, 7);"></i>
+                </a>
+              </button>
+              <button (click)="deleteUser(user.username)" class="btn btn-sm">
+                <i class="fas fa-trash" style="color: rgb(199, 9, 9);"></i>
+              </button>
             </td>
           </tr>
         </tbody>

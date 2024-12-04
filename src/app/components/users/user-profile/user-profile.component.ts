@@ -13,6 +13,7 @@ export class UserProfileComponent implements OnInit {
   username: any;
 
   userProfile: any;
+role: any;
 
   constructor(private route: ActivatedRoute, private userService: UserService,
     private router: Router
