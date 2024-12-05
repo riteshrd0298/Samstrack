@@ -36,5 +36,4 @@ export class SubjectService {
     return this.http.delete(url, { responseType: 'text' });
   }
 
-
 }
