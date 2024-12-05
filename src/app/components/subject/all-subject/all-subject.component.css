@@ -133,7 +133,7 @@
 }
 
 /* Media Queries for Smaller Screens */
-@media (max-width: 992px) {
+@media screen and (max-width: 992px) {
     .wrapper {
         width: 85%; /* Reduce wrapper width */
     }
@@ -154,7 +154,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .wrapper {
         width: 95%; /* Further reduce width */
         padding: 15px;
@@ -176,10 +176,11 @@
     }
 }
 
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
     .wrapper {
         width: 97%; /* Full-width on smaller screens */
         padding: 10px;
+        height: 32rem;
     }
 
     .name {
@@ -195,5 +196,8 @@
     .btn {
         font-size: 10px;
         padding: 4px 6px;
+    }
+    .table-responsive{
+        height: 24.5rem !important;
     }
 }

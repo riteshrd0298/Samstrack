@@ -15,10 +15,11 @@ export class ViewSubjectComponent implements OnInit {
   subProfile:any;
 
 
-  constructor(private subjectService:SubjectService, loginService:LoginService,
+  constructor(private subjectService:SubjectService, private loginService:LoginService,
       private route:ActivatedRoute, private router:Router
   ){}
   ngOnInit(): void {
+    this.role=this.loginService.getRole();
     this.id = this.route.snapshot.paramMap.get('id');
     this.getSubject(this.id);
   }

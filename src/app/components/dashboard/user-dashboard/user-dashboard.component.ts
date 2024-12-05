@@ -19,7 +19,7 @@ export class UserDashboardComponent {
       imgUrl:'/assets/images/java.png',
       altAttr:'Java logo',
       subName:'Java ',
-      externalurl:'https://dev.java'
+      externalurl:'https://www.w3schools.com/java/default.asp'
     },
     {
       imgUrl:'/assets/images/python.png',

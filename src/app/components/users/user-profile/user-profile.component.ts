@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -15,11 +16,12 @@ export class UserProfileComponent implements OnInit {
   userProfile: any;
 role: any;
 
-  constructor(private route: ActivatedRoute, private userService: UserService,
+  constructor(private route: ActivatedRoute, private userService: UserService,private loginService: LoginService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.role=this.loginService.getRole();
     this.username = this.route.snapshot.paramMap.get('username');
     this.getUserProfile(this.username);
   }

@@ -44,7 +44,7 @@ html, body {
     max-width: 550px;
     min-height: 450px;
     padding: 40px 30px 30px 30px;
-    background-color: rgba(203, 229, 250, 0.8); /* Semi-transparent background */
+    background-color: rgba(191, 210, 252, 0.39); /* Semi-transparent background */
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(4, 4, 4, 0.2); /* Softer shadow */
     position: relative;
@@ -85,7 +85,7 @@ html, body {
     letter-spacing: 1.3px;
     padding-left: 10px;
     text-align: center;
-    color: #131111; /* Darker color for better contrast */
+    color: #fcf9f9; /* Darker color for better contrast */
     margin-top: 20px;
 }
 
@@ -120,7 +120,7 @@ html, body {
 .wrapper .btn {
     width: 100%;
     height: 40px;
-    background-color: #595b5c;
+    background-color: #02121a;
     color: #fff;
     border-radius: 25px;
     box-shadow: 3px 3px 3px #b1b1b1,
@@ -134,7 +134,10 @@ html, body {
 .wrapper .btn:hover {
     background-color: #039BE5;
 }
-
+input::placeholder {
+    color: #0e0d0d;
+    font-weight: bold;
+}
 /* Link styling */
 .wrapper a {
     text-decoration: none;

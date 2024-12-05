@@ -54,7 +54,7 @@
                 <!-- Password Field -->
                 <div class="col-md-6 col-sm-12 form-field">
                     <span class="fas fa-key"></span>
-                    <input type="password" name="password" id="pwd" placeholder="Password" [(ngModel)]="userProfile.password" required>
+                    <input type="text" name="password" id="pwd" placeholder="Password" [(ngModel)]="userProfile.password" required>
                 </div>
 
                 <!-- Role Dropdown -->
@@ -62,9 +62,9 @@
                     <span class="fas fa-user-tag"></span>
                     <select name="role" id="role" [(ngModel)]="userProfile.role" required>
                         <option [ngValue]="userProfile.role" disabled selected>{{userProfile.role}}</option>
-                        <option value="Admin">Admin</option>
-                        <option value="Faculty">Faculty</option>
-                        <option value="User">User</option>
+                        <option value="Admin">admin</option>
+                        <option value="Faculty">faculty</option>
+                        
                     </select>
                 </div>
             </div>

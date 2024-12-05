@@ -6,23 +6,24 @@
     padding: 0;
 }
 
-body{
-    margin-top: 40px;
+body {
+    margin-top: 0;
 }
 
 /* Background Image Styling */
 .background-image {
     background-image: url('/assets/images/welcome.jpg');
     background-size: cover;
-    background-position: fixed;
+    background-position: center;
     min-height: 89vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-   
+    position: relative;
 }
-.background-image::before{
+
+.background-image::before {
     content: '';
     position: absolute;
     top: 0;
@@ -35,7 +36,7 @@ body{
 
 /* Container Styling */
 .container {
-    width: 72%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -44,9 +45,8 @@ body{
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 2;
-    height: 73%;
+    min-height: 73%;
     overflow: hidden;
-   
 }
 
 /* Select Row Styling */
@@ -92,7 +92,8 @@ body{
     border-collapse: collapse;
 }
 
-.table th, .table td {
+.table th,
+.table td {
     padding: 12px;
     text-align: left;
     border: 1px solid #ddd;
@@ -109,7 +110,7 @@ body{
     font-weight: bold;
 }
 
-/* No Students essage Styling */
+/* No Students Message Styling */
 .no-students {
     color: #888;
     text-align: center;
@@ -119,7 +120,7 @@ body{
 
 /* Button Styling */
 .btn-primary {
-    background-color:#0056b3;
+    background-color: #0056b3;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -127,35 +128,92 @@ body{
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s;
+    width: 100%;
 }
 
 .btn-primary:hover {
     background-color: #4294ec;
 }
 
-#table-form-box{
+#table-form-box {
     overflow-y: scroll;
-}
-#table-container{
-    height: 85%;
-    overflow-x: hidden !important;
 }
 
 #table-container {
+    height: 80%;
+    overflow-x: hidden !important;
     background-color: #ccd4bf;
-  }
-  
-  #table-container::-webkit-scrollbar-track {
+}
+
+#table-container::-webkit-scrollbar-track {
     background-color: #ccd4bf;
-  }
-  
-  #table-container::-webkit-scrollbar {
+}
+
+#table-container::-webkit-scrollbar {
     width: 15px;
     background-color: #f5f5f5;
-  }
-  
-  #table-container::-webkit-scrollbar-thumb {
+}
+
+#table-container::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #218b82;
-  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Adjust Container Width for Tablets */
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Stack Select Items Vertically */
+    .select-row {
+        flex-direction: column;
+    }
+
+    .select-item {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Adjust Table Font Size */
+    .table th,
+    .table td {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    /* Reduce Button Padding */
+    .btn-primary {
+        padding: 8px 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Adjust Container Padding for Mobile */
+    .container {
+        padding: 10px;
+    }
+
+    /* Reduce Table Font Size for Mobile */
+    .table th,
+    .table td {
+        font-size: 0.8em;
+        padding: 6px;
+    }
+
+    /* Adjust Scrollbar Width */
+    #table-container::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    #table-container::-webkit-scrollbar-thumb {
+        background-color: #006d5b;
+    }
+
+    #table-container{
+        height: 16rem !important;
+    }
+}

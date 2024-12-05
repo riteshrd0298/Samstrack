@@ -23,9 +23,9 @@
                    </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let std of student_List">
+                    <tr *ngFor="let std of student_List" class="fw-bold ">
                         <td>{{ std.id }}</td>
-                        <td>{{ std.name }}</td>
+                        <td class="text-capitalize">{{ std.name  }}</td>
                         <td>{{ std.email }}</td>
                         <td>
                             <button class="btn btn-sm "><a [routerLink]="['/view-student', std.id ]"><i
